@@ -1,0 +1,41 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Групи{% endblock meta_title %}
+
+{% block title %}Групи{% endblock title %}
+
+{% block content %}
+<a href='{% url "groups_add" %}' class="btn btn-primary">Додати Групу</a>
+
+<table class="table">
+	<thead>
+		<th>#</th>
+		<th><a href="#">Назва &uarr;</a></th>
+		<th><a href="#">Староста</a></th>
+		<th>Дії</th>
+	</thead>
+	<tbody>
+	{% for group in groups %}
+		<tr>
+		 	<td>{{ forloop.counter }}</td>
+			<td><a href='{% url "groups_edit" group.id %}'>{{ group.name }}</a></td>
+			<td><a href="#">{{ group.leader }}</a></td>
+			<td>
+				<div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Дія
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+	                    <li><a href='{% url "groups_edit" group.id %}'>Редагувати</a></li>
+	                    <li><a href='{% url "groups_delete" group.id %}'>Видалити</a></li>
+                  </ul>
+                </div>
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% include "includes/pagination.html" %}
+{% endblock content %}

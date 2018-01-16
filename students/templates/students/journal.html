@@ -1,0 +1,68 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Відвідування{% endblock meta_title %}
+
+{% block title %}Відвідування Студентів{% endblock title %}
+
+{% block content %}
+<nav id="pos">
+	<ul id="yearnav">
+		<li><a href="#">&larr;</a></li>
+		<li><b>Жовтень 2017</b></li>
+		<li><a href="#">&rarr;</a></li>
+	</ul>
+</nav>
+
+<div id="table_pos">
+	<table id="tab">
+		<thead class="calendar">
+			<th>#</th>
+			<th><b>Студент</b></th>
+			{% for i in data %}
+			<th><b>{% cycle "Пн" "Вт" "Ср" "Чт" "Пт" "Сб" "Нд" %}</b><br/><b>{{ i }}</b></th>
+			{% endfor %}
+		</thead>
+		<tbody class="calendar">
+		{% for student in students %}
+			<tr>
+				<td>{{ student.id }}</td>
+				<td><a href="#">{{ student.last_name }}<br/>{{ student.first_name }}</a></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+				<td><input type="checkbox" name="visit"></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% include "includes/pagination.html" %}
+{% endblock content %}

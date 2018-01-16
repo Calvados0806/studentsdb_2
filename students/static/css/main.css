@@ -1,0 +1,78 @@
+/* Global Styles */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+.b {
+	display: inline-block;
+	width: 10em;
+	text-align: left;
+	margin: 1em 0 1em 0;
+}
+input {
+	border-radius: 4px;
+}
+/* For Visiting */
+#yearnav /* menu of year */{
+	list-style-type: none;
+}
+
+#yearnav li {
+	float: left;
+}
+
+#pos /* position on center */{
+	margin-left: 40%;
+	display: inline-block;
+}
+
+#tab input {
+	margin: 4px;
+}
+
+#table_pos {
+	margin: 10px 70px 30px;
+}
+
+.calendar th, .calendar tr, .calendar td {
+	padding: 6px;
+	border: 1px solid #cccccc;
+}
+
+#tab {
+	border: 1px solid #cccccc;
+}
+/* Homework */
+#changes {
+	display: inline-block;
+}
+
+.btn {
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+/* End Homework */
+
+/* For message */
+.alert {
+	margin-top: 10px;
+}
+/* Footer */
+#footer {
+	border-top: 1px solid #dddddd;
+	padding-top: 10px;
+}
+/* Group selectors */
+#group-selector {
+	margin-top: 30px;
+}
+
+#group-selector select {
+	margin: 0;
+	width: 85%;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	height: 30px;
+	line-height: 30px;
+	color: #555555;
+}
+
