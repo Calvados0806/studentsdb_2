@@ -9,10 +9,12 @@ def students_list(request):
 	students = Student.objects.all()
 	# try to sort students
 	order_by = request.GET.get("order_by", "")
-	if order_by in ("last_name", "first_name", "ticket"):
+	if order_by in ("last_name", "first_name", "ticket", "id"):
 		students = students.order_by(order_by)
 		if request.GET.get("reverse", "") == '1':
 			students = students.reverse()
+	else:
+		students = students.order_by("last_name")
 	# paginate students
 	paginator = Paginator(students, 3)
 	page = request.GET.get("page")
