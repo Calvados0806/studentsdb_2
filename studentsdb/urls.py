@@ -1,5 +1,6 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
+from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
     # Students Urls
@@ -17,3 +18,8 @@ urlpatterns = [
     # Another Urls
     url(r'^admin/', include(admin.site.urls)),
 ]
+if DEBUG:
+    # serve files from media folder
+    urlpatterns += patterns('',
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+    'document_root': MEDIA_ROOT}))
