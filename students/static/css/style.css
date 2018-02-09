@@ -75,3 +75,9 @@ input {
 	line-height: 30px;
 	color: #555555;
 }
+/* Form Styles */
+textarea,
+select,
+input {
+	max-width: 300px;
+}
