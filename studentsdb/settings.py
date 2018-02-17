@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,7 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "students",
+    'crispy_forms',
+    'students',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,3 +111,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "..", "media")
+
+# SMTP settings
+ADMIN_EMAIL = 'flamaster0807@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = "flamaster0807@gmail.com"
+EMAIL_HOST_PASSWORD = "56kilo3e2w1q"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
